@@ -1,0 +1,15 @@
+{
+  "_comment": "Country metadata for the prototype. Income groups follow World Bank FY2025 classifications (approximate, verify before citing). iso_n is the ISO 3166-1 numeric code used to match countries on the world map.",
+  "countries": [
+    { "iso3": "SRB", "iso_n": "688", "name": "Serbia",        "region": "Europe & Central Asia",   "income_group": "Upper middle income", "marker": false },
+    { "iso3": "MDA", "iso_n": "498", "name": "Moldova",       "region": "Europe & Central Asia",   "income_group": "Upper middle income", "marker": false },
+    { "iso3": "KOR", "iso_n": "410", "name": "South Korea",   "region": "East Asia & Pacific",     "income_group": "High income",         "marker": false },
+    { "iso3": "CHN", "iso_n": "156", "name": "China",         "region": "East Asia & Pacific",     "income_group": "Upper middle income", "marker": false },
+    { "iso3": "JPN", "iso_n": "392", "name": "Japan",         "region": "East Asia & Pacific",     "income_group": "High income",         "marker": false },
+    { "iso3": "DEU", "iso_n": "276", "name": "Germany",       "region": "Europe & Central Asia",   "income_group": "High income",         "marker": false },
+    { "iso3": "USA", "iso_n": "840", "name": "United States", "region": "North America",           "income_group": "High income",         "marker": false },
+    { "iso3": "BRA", "iso_n": "076", "name": "Brazil",        "region": "Latin America & Caribbean","income_group": "Upper middle income", "marker": false },
+    { "iso3": "NGA", "iso_n": "566", "name": "Nigeria",       "region": "Sub-Saharan Africa",      "income_group": "Lower middle income", "marker": false },
+    { "iso3": "SGP", "iso_n": "702", "name": "Singapore",     "region": "East Asia & Pacific",     "income_group": "High income",         "marker": true, "marker_coords": [103.82, 1.35] }
+  ]
+}

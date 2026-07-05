@@ -1,0 +1,53 @@
+{
+  "index_name": "Risk-Adjusted Development Profile",
+  "index_short": "RADP",
+  "version": "0.1 (prototype)",
+  "tagline": "An analytical lens on whether a country's income level is broad-based, sustainable and resilient. Not an official classification.",
+  "pillars": {
+    "income":     { "name": "Income & growth",                    "weight": 0.20, "color": "#2166AC", "desc": "Level of income (GNI and GDP per capita), recent growth, and price stability. This is the starting point that headline classifications rely on." },
+    "fiscal":     { "name": "Fiscal & debt sustainability",       "weight": 0.20, "color": "#4393C3", "desc": "Public debt burden, budget balance, and debt-service pressure. High income financed by unsustainable borrowing is fragile income." },
+    "external":   { "name": "External vulnerability",             "weight": 0.15, "color": "#5AAE61", "desc": "Current account position, reserve buffers, and dependence on remittance inflows. Measures exposure to external shocks." },
+    "productive": { "name": "Export structure & productive capacity", "weight": 0.15, "color": "#B8860B", "desc": "Export diversification and economic complexity. Concentrated, low-complexity export baskets make income volatile and hard to upgrade." },
+    "human":      { "name": "Human development & inclusion",      "weight": 0.20, "color": "#8073AC", "desc": "HDI, life expectancy, education, poverty, inequality and unemployment. Whether income translates into broad-based wellbeing." },
+    "governance": { "name": "Governance & institutions",          "weight": 0.10, "color": "#878787", "desc": "Government effectiveness and rule of law (WGI percentile ranks). Perceptions-based and contested; weighted lowest and clearly flagged." }
+  },
+  "normalization": {
+    "steps": [
+      "Each indicator is converted to a 0–100 score using min–max scaling across the countries in the dataset.",
+      "Before scaling, values are winsorized at the 5th and 95th percentiles of the cross-country distribution, so a single extreme value (for example Japan's debt ratio or Nigeria's poverty rate) does not compress everyone else's scores.",
+      "For indicators where higher is better (GNI per capita, HDI, reserves, complexity, governance), the score rises with the value.",
+      "For indicators where lower is better (public debt, deficit, inflation, poverty, Gini, unemployment, remittance dependence, export concentration), the scale is inverted.",
+      "Missing values are never imputed or invented. They are shown as missing and simply excluded from the relevant pillar average.",
+      "Each pillar score is the simple average of the normalized indicators available within that pillar.",
+      "The total RADP score is the weighted average of available pillar scores, using the weights above.",
+      "If a pillar has no data at all, it is excluded and the remaining weights are proportionally rescaled — and the country page shows a visible warning that this happened.",
+      "If fewer than 60% of the scored indicators are available for a country, the total score is flagged as low-confidence."
+    ]
+  },
+  "confidence_rules": {
+    "levels": {
+      "high":   { "label": "High confidence",   "desc": "Most indicators present, recent (within ~3 years), and verified against the source databases." },
+      "medium": { "label": "Medium confidence", "desc": "Some indicators missing, older, or transcribed approximately rather than verified." },
+      "low":    { "label": "Low confidence",    "desc": "Many missing values, or a material share of placeholder values; total score is indicative at best." },
+      "sample": { "label": "Sample only",       "desc": "Demonstration data. Do not use for analysis or citation." }
+    },
+    "note": "Because the entire prototype dataset is hand-transcribed and unverified, no country is shown above Medium confidence in this version, regardless of coverage."
+  },
+  "defensible_not_definitive": {
+    "title": "Why this index is defensible but not definitive",
+    "points": [
+      { "h": "GNI per capita alone is incomplete", "t": "GNI per capita is the backbone of income classifications, but it says nothing about how income is generated or distributed. A country can cross an income threshold while running unsustainable deficits, depending on one export commodity, or leaving large parts of its population in poverty. The RADP keeps GNI at the centre and surrounds it with the context that headline classifications strip out." },
+      { "h": "Debt sustainability matters", "t": "Income financed by rapidly rising public debt or absorbed by interest payments is fragile. Two countries with identical GNI per capita can face completely different fiscal futures. Debt ratios, budget balances and debt-service burdens indicate whether today's income level is likely to survive a shock or a refinancing cycle." },
+      { "h": "Export structure and productive capacity matter", "t": "A country exporting one commodity to a handful of partners inherits the volatility of that commodity's price. Diversified, complex export baskets are associated with more stable growth and more room to upgrade. Concentration indices and economic complexity capture this dimension that income figures hide." },
+      { "h": "Human development, poverty and inequality matter", "t": "Development is ultimately about people. Average income can rise while poverty stays high and inequality widens. HDI, poverty headcounts, the Gini index and unemployment test whether income is actually reaching households." },
+      { "h": "Vulnerability matters", "t": "Current account deficits, thin reserves and heavy remittance dependence all expose a country to shocks it does not control: partner-country recessions, migration policy changes, commodity swings, sudden stops in capital. Resilience is a property of the structure, not the level, of income." },
+      { "h": "Weights are contestable — deliberately visible", "t": "The default weights (20/20/15/15/20/10) reflect a judgement that income, sustainability and inclusion deserve equal prominence, with structure and vulnerability close behind and perceptions-based governance weighted lowest. Reasonable experts would choose differently. That is exactly why the weights are published, the pillar scores are always shown separately, and no single number is presented as 'the answer'." },
+      { "h": "Component scores must always be shown", "t": "A composite hides trade-offs by construction. Japan scores superbly on human development and complexity while carrying the world's highest debt ratio; Nigeria's low score is driven by very different pillars than Moldova's. The dashboard therefore never displays the total score without its six components." },
+      { "h": "This does not replace official classifications", "t": "World Bank income groups, IMF assessments, UN LDC categories and national statistics follow governed, documented, internationally negotiated methodologies. The RADP is an analytical prototype meant to enrich discussion around those classifications, not to substitute for them." },
+      { "h": "How missing data is handled", "t": "Missing values are shown as missing — never imputed, interpolated or borrowed from similar countries. Pillar scores average only what exists; if a pillar is empty it is excluded with a visible warning and transparent reweighting; if less than 60% of indicators exist the total score is flagged low-confidence." },
+      { "h": "How confidence flags work", "t": "Every value carries a status (approximate or sample) and a reference year. These roll up into a country-level confidence badge (High / Medium / Low / Sample only) shown next to every score. In this prototype the whole dataset is unverified, so nothing is shown above Medium confidence." }
+    ]
+  },
+  "coverage_threshold": 0.6,
+  "recent_year_threshold": 3
+}

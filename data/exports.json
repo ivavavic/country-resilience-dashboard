@@ -1,0 +1,178 @@
+{
+  "_comment": "PROTOTYPE trade structure data. Product and destination shares are approximate figures transcribed from public OEC (Observatory of Economic Complexity) profiles for reference year ~2022. Status 'approx' = roughly consistent with public data but not verified; 'sample' = illustrative placeholder. Do not cite these shares.",
+  "dataset_status": "sample",
+  "reference_year": 2022,
+  "source": "oec",
+  "countries": {
+    "SRB": {
+      "status": "approx",
+      "top_products": [
+        { "name": "Insulated wire & cable", "share": 4.8 },
+        { "name": "Electric motors & machinery", "share": 3.4 },
+        { "name": "Rubber tires", "share": 3.0 },
+        { "name": "Maize (corn)", "share": 2.9 },
+        { "name": "Refined copper & ores", "share": 2.7 }
+      ],
+      "top_destinations": [
+        { "name": "Germany", "share": 13.0 },
+        { "name": "Italy", "share": 8.0 },
+        { "name": "Bosnia & Herzegovina", "share": 7.0 },
+        { "name": "Hungary", "share": 6.0 },
+        { "name": "Romania", "share": 5.0 }
+      ]
+    },
+    "MDA": {
+      "status": "approx",
+      "top_products": [
+        { "name": "Insulated wire (vehicle wiring)", "share": 14.0 },
+        { "name": "Sunflower seeds & seed oils", "share": 12.0 },
+        { "name": "Wine", "share": 6.0 },
+        { "name": "Maize (corn)", "share": 5.5 },
+        { "name": "Wheat", "share": 4.5 }
+      ],
+      "top_destinations": [
+        { "name": "Romania", "share": 34.0 },
+        { "name": "Ukraine", "share": 10.0 },
+        { "name": "Italy", "share": 8.0 },
+        { "name": "Germany", "share": 6.0 },
+        { "name": "Türkiye", "share": 5.0 }
+      ]
+    },
+    "KOR": {
+      "status": "approx",
+      "top_products": [
+        { "name": "Integrated circuits", "share": 15.0 },
+        { "name": "Cars", "share": 8.5 },
+        { "name": "Refined petroleum", "share": 7.0 },
+        { "name": "Vehicle parts", "share": 3.5 },
+        { "name": "Ships & vessels", "share": 3.0 }
+      ],
+      "top_destinations": [
+        { "name": "China", "share": 22.0 },
+        { "name": "United States", "share": 16.0 },
+        { "name": "Vietnam", "share": 9.0 },
+        { "name": "Japan", "share": 4.5 },
+        { "name": "Hong Kong", "share": 4.0 }
+      ]
+    },
+    "CHN": {
+      "status": "approx",
+      "top_products": [
+        { "name": "Phones & broadcasting equipment", "share": 5.5 },
+        { "name": "Computers", "share": 5.0 },
+        { "name": "Integrated circuits", "share": 4.0 },
+        { "name": "Batteries & accumulators", "share": 2.5 },
+        { "name": "Textiles & apparel", "share": 2.5 }
+      ],
+      "top_destinations": [
+        { "name": "United States", "share": 16.0 },
+        { "name": "Hong Kong", "share": 8.0 },
+        { "name": "Japan", "share": 4.8 },
+        { "name": "South Korea", "share": 4.5 },
+        { "name": "Vietnam", "share": 4.0 }
+      ]
+    },
+    "JPN": {
+      "status": "approx",
+      "top_products": [
+        { "name": "Cars", "share": 13.0 },
+        { "name": "Vehicle parts", "share": 4.5 },
+        { "name": "Integrated circuits", "share": 4.0 },
+        { "name": "Semiconductor-making machinery", "share": 3.5 },
+        { "name": "Construction machinery", "share": 2.5 }
+      ],
+      "top_destinations": [
+        { "name": "China", "share": 19.0 },
+        { "name": "United States", "share": 18.5 },
+        { "name": "South Korea", "share": 6.5 },
+        { "name": "Taiwan", "share": 6.0 },
+        { "name": "Hong Kong", "share": 4.5 }
+      ]
+    },
+    "DEU": {
+      "status": "approx",
+      "top_products": [
+        { "name": "Cars", "share": 10.0 },
+        { "name": "Packaged medicaments", "share": 5.5 },
+        { "name": "Vehicle parts", "share": 4.0 },
+        { "name": "Vaccines & blood products", "share": 3.0 },
+        { "name": "Industrial machinery", "share": 2.8 }
+      ],
+      "top_destinations": [
+        { "name": "United States", "share": 10.0 },
+        { "name": "France", "share": 7.5 },
+        { "name": "Netherlands", "share": 7.0 },
+        { "name": "China", "share": 6.5 },
+        { "name": "Poland", "share": 5.5 }
+      ]
+    },
+    "USA": {
+      "status": "approx",
+      "top_products": [
+        { "name": "Refined petroleum", "share": 7.0 },
+        { "name": "Crude petroleum", "share": 5.5 },
+        { "name": "Petroleum gas (LNG)", "share": 3.5 },
+        { "name": "Cars & vehicle parts", "share": 3.5 },
+        { "name": "Integrated circuits & aircraft", "share": 3.0 }
+      ],
+      "top_destinations": [
+        { "name": "Canada", "share": 17.0 },
+        { "name": "Mexico", "share": 16.0 },
+        { "name": "China", "share": 7.5 },
+        { "name": "Japan", "share": 4.0 },
+        { "name": "United Kingdom", "share": 3.7 }
+      ]
+    },
+    "BRA": {
+      "status": "approx",
+      "top_products": [
+        { "name": "Soybeans", "share": 14.0 },
+        { "name": "Crude petroleum", "share": 12.5 },
+        { "name": "Iron ore", "share": 9.0 },
+        { "name": "Maize (corn)", "share": 5.5 },
+        { "name": "Beef", "share": 3.5 }
+      ],
+      "top_destinations": [
+        { "name": "China", "share": 27.0 },
+        { "name": "United States", "share": 11.0 },
+        { "name": "Argentina", "share": 4.5 },
+        { "name": "Netherlands", "share": 3.5 },
+        { "name": "Spain", "share": 3.0 }
+      ]
+    },
+    "NGA": {
+      "status": "approx",
+      "top_products": [
+        { "name": "Crude petroleum", "share": 76.0 },
+        { "name": "Petroleum gas (LNG)", "share": 11.0 },
+        { "name": "Nitrogenous fertilizers (urea)", "share": 3.0 },
+        { "name": "Cocoa beans", "share": 1.5 },
+        { "name": "Oil seeds & sesame", "share": 1.0 }
+      ],
+      "top_destinations": [
+        { "name": "India", "share": 12.0 },
+        { "name": "Spain", "share": 10.0 },
+        { "name": "Netherlands", "share": 9.0 },
+        { "name": "United States", "share": 7.0 },
+        { "name": "France", "share": 7.0 }
+      ]
+    },
+    "SGP": {
+      "status": "approx",
+      "top_products": [
+        { "name": "Integrated circuits", "share": 21.0 },
+        { "name": "Refined petroleum", "share": 10.0 },
+        { "name": "Gold", "share": 4.0 },
+        { "name": "Gas turbines & machinery", "share": 3.5 },
+        { "name": "Packaged medicaments", "share": 2.5 }
+      ],
+      "top_destinations": [
+        { "name": "China", "share": 13.0 },
+        { "name": "Hong Kong", "share": 12.0 },
+        { "name": "Malaysia", "share": 10.0 },
+        { "name": "United States", "share": 9.0 },
+        { "name": "Indonesia", "share": 7.0 }
+      ]
+    }
+  }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Country Development &amp; Resilience Dashboard</title>
+<meta name="description" content="An analytical prototype exploring whether a country's income level is broad-based, sustainable and resilient. Combines income, debt, trade structure, human development and governance indicators.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%2317324A'/><rect x='6' y='16' width='4' height='10' fill='%235AAE61'/><rect x='12' y='11' width='4' height='15' fill='%234393C3'/><rect x='18' y='6' width='4' height='20' fill='%232166AC'/><rect x='24' y='13' width='4' height='13' fill='%238073AC'/></svg>">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#/home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30"><rect width="32" height="32" rx="4" fill="#17324A"/><rect x="6" y="16" width="4" height="10" fill="#5AAE61"/><rect x="12" y="11" width="4" height="15" fill="#4393C3"/><rect x="18" y="6" width="4" height="20" fill="#7FB2D9"/><rect x="24" y="13" width="4" height="13" fill="#8073AC"/></svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-title">Country Development &amp; Resilience Dashboard</span>
+        <span class="brand-sub">Risk-Adjusted Development Profile · experimental public dashboard</span>
+      </span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">Menu</button>
+    <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+      <a href="#/home" data-nav="home">Map</a>
+      <a href="#/rankings" data-nav="rankings">Rankings</a>
+      <a href="#/compare" data-nav="compare">Compare</a>
+      <a href="#/methodology" data-nav="methodology">Methodology</a>
+      <a href="#/sources" data-nav="sources">Data sources</a>
+      <a href="#/status" data-nav="status">Data status</a>
+      <a href="#/about" data-nav="about">About</a>
+    </nav>
+  </div>
+</header>
+
+<div class="disclaimer-bar" role="note">
+  <div class="wrap">
+    <strong>Experimental dashboard.</strong>
+    This dashboard is an analytical prototype. It is not an official World Bank, IMF, UN, or government
+    classification. Composite scores are designed to support discussion, not replace expert assessment.
+    Every value is labeled by origin (API-fetched, verified, manual, or sample) — see the
+    <a href="#/status">Data status</a> page.
+  </div>
+</div>
+
+<main id="main" class="wrap" tabindex="-1">
+  <div id="app">
+    <div class="loading-state">Loading dashboard data…</div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-title">Country Development &amp; Resilience Dashboard</p>
+      <p>An open, static, experimental policy dashboard for exploring development beyond GNI per capita,
+      fed by a free automated pipeline drawing on the World Bank, IMF, UNDP, WGI and trade data sources.</p>
+    </div>
+    <div>
+      <p class="footer-title">Status</p>
+      <p>Dataset: <span id="footerDatasetStatus">—</span><br>
+      Last updated: <span id="footerUpdated">—</span></p>
+      <p><a href="#/sources">Sources</a> · <a href="#/status">Data status</a> · <a href="#/methodology">Methodology</a></p>
+    </div>
+    <div>
+      <p class="footer-title">Disclaimer</p>
+      <p>Not an official classification. Composite scores support discussion; they do not replace
+      official statistics or expert assessment.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="tooltip" class="map-tooltip" role="status" aria-live="polite" hidden></div>
+
+<!-- Map libraries (CDN). If these fail to load (e.g. offline), the site falls back to a grid view. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson-client/3.1.0/topojson.min.js"></script>
+
+<!-- Embedded copy of the /data JSON files so the site also works when opened
+     directly from a local folder (file://), where browsers block fetch(). -->
+<script src="data/embedded_data.js"></script>
+
+<script src="app.js"></script>
+</body>
+</html>

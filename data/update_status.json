@@ -1,0 +1,78 @@
+{
+  "_comment": "Machine-written by scripts/update_data.py after each pipeline run, and rendered on the website's Data status page. 'last_success': null means the pipeline has not yet run successfully for that source since this file was created.",
+  "pipeline_last_run": null,
+  "pipeline_note": "The pipeline runs monthly via GitHub Actions (or manually: python3 scripts/update_data.py). Until its first run, values carry their shipped manual/sample labels.",
+  "sources": {
+    "wb_wdi": {
+      "name": "World Bank — World Development Indicators",
+      "automation": "automated",
+      "how": "World Bank Indicators API (keyless). Most recent non-null observation per indicator, up to 8 years back.",
+      "indicators_covered": ["gni_pc", "gdp_pc", "gdp_growth", "inflation", "population", "pop_growth", "remittances_gdp", "poverty", "gini", "unemployment", "life_exp"],
+      "indicators_manual": [],
+      "also_updates": "Income group classification per country.",
+      "last_attempt": null,
+      "last_success": null,
+      "latest_ref_year": null,
+      "error": null
+    },
+    "imf": {
+      "name": "IMF — World Economic Outlook (DataMapper API)",
+      "automation": "automated",
+      "how": "IMF DataMapper public API (keyless). Latest observation up to the current year; recent WEO points may be IMF staff estimates.",
+      "indicators_covered": ["debt_gdp", "fiscal_balance", "current_account"],
+      "indicators_manual": ["reserves_months", "interest_rev"],
+      "unresolved": {
+        "reserves_months": "No keyless IMF endpoint serves 'reserves in months of imports' as one ready series; it requires IRFCL/BOP SDMX mapping plus an imports denominator. Remains manual.",
+        "interest_rev": "Interest payments as % of revenue is not a standard WEO DataMapper series; it appears in Fiscal Monitor tables without a stable machine-readable endpoint. Remains manual."
+      },
+      "last_attempt": null,
+      "last_success": null,
+      "latest_ref_year": null,
+      "error": null
+    },
+    "wb_wgi": {
+      "name": "Worldwide Governance Indicators (via World Bank API)",
+      "automation": "automated",
+      "how": "WGI percentile ranks (GE.PER.RNK, RL.PER.RNK) served through the keyless World Bank API.",
+      "indicators_covered": ["gov_eff", "rule_law"],
+      "indicators_manual": [],
+      "last_attempt": null,
+      "last_success": null,
+      "latest_ref_year": null,
+      "error": null
+    },
+    "undp_hdr": {
+      "name": "UNDP — Human Development Report",
+      "automation": "semi_automated",
+      "how": "Downloads and parses UNDP's complete-time-series CSV. The CSV URL is pinned per HDR edition; when a new report is released, one line in scripts/update_data.py (HDR_CSV_URL) must be updated.",
+      "indicators_covered": ["hdi", "school_exp"],
+      "indicators_manual": [],
+      "last_attempt": null,
+      "last_success": null,
+      "latest_ref_year": null,
+      "error": null
+    },
+    "oec": {
+      "name": "Observatory of Economic Complexity",
+      "automation": "partial_manual",
+      "how": "OEC bulk/API access now requires a registered (paid) token, so this source is NOT automated. Top export products, destinations and the Economic Complexity Index remain manually transcribed from public profile pages and are labeled 'manual_approx'.",
+      "indicators_covered": [],
+      "indicators_manual": ["eci", "export_conc", "top_products", "top_destinations"],
+      "last_attempt": null,
+      "last_success": null,
+      "latest_ref_year": null,
+      "error": null
+    },
+    "un_comtrade": {
+      "name": "UN Comtrade (optional)",
+      "automation": "optional",
+      "how": "If a free registered key is provided as the COMTRADE_API_KEY secret, the pipeline computes top export products, top destinations and export concentration (HHI) from real Comtrade flows, replacing the manual OEC transcriptions. The site never depends on this.",
+      "indicators_covered": [],
+      "indicators_manual": ["export_conc (until key provided)", "top_products", "top_destinations"],
+      "last_attempt": null,
+      "last_success": null,
+      "latest_ref_year": null,
+      "error": null
+    }
+  }
+}

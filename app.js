@@ -17,7 +17,7 @@ const S = {
   sources: null,        // sources.json
   scores: {},           // computed per-country scores
   norm: {},             // normalization bounds per indicator
-  worldTopo: null,      // cached topojson
+  worldFeatures: null,  // cached local GeoJSON map features
   compareSel: [],       // selected iso3 for compare
   rankSort: { key: "total", dir: -1 }
 };
@@ -377,12 +377,62 @@ function legendHTML(mi, scale) {
     <span class="legend-item"><span class="legend-swatch" style="background:var(--nodata)"></span>No data / not in sample</span>`;
 }
 
-async function ensureTopo() {
-  if (S.worldTopo) return S.worldTopo;
-  if (typeof d3 === "undefined" || typeof topojson === "undefined") throw new Error("map libs unavailable");
-  const topo = await d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json");
-  S.worldTopo = topo;
-  return topo;
+async function ensureWorldFeatures() {
+  if (S.worldFeatures) return S.worldFeatures;
+
+  const embedded = () => {
+    if (window.EMBEDDED_WORLD_GEOJSON && Array.isArray(window.EMBEDDED_WORLD_GEOJSON.features)) {
+      S.worldFeatures = window.EMBEDDED_WORLD_GEOJSON.features;
+      return S.worldFeatures;
+    }
+    return null;
+  };
+
+  // First try the local GeoJSON file. This works on GitHub Pages and on a local web server.
+  // If the page is opened directly as file://, many browsers block fetch(), so fall back
+  // to the embedded script copy loaded by index.html.
+  try {
+    const res = await fetch("data/world_countries.geojson", { cache: "no-cache" });
+    if (!res.ok) throw new Error("local map outlines unavailable: " + res.status);
+    const geo = await res.json();
+    if (!geo || !Array.isArray(geo.features)) throw new Error("invalid local map outlines");
+    S.worldFeatures = geo.features;
+    return S.worldFeatures;
+  } catch (e) {
+    const fallback = embedded();
+    if (fallback) {
+      console.warn("Using embedded map fallback (GeoJSON fetch failed):", e.message);
+      return fallback;
+    }
+    throw e;
+  }
+}
+
+function projectLonLat(coord, width, height) {
+  const lon = Math.max(-180, Math.min(180, Number(coord[0])));
+  const lat = Math.max(-90, Math.min(90, Number(coord[1])));
+  // Dependency-free equirectangular projection. Not as pretty as D3 Natural Earth,
+  // but robust and fully static on GitHub Pages.
+  return [((lon + 180) / 360) * width, ((90 - lat) / 180) * height];
+}
+
+function ringPath(ring, width, height) {
+  if (!Array.isArray(ring) || ring.length === 0) return "";
+  return ring.map((pt, i) => {
+    const [x, y] = projectLonLat(pt, width, height);
+    return (i ? "L" : "M") + x.toFixed(2) + "," + y.toFixed(2);
+  }).join(" ") + " Z";
+}
+
+function geometryPath(geometry, width, height) {
+  if (!geometry) return "";
+  if (geometry.type === "Polygon") {
+    return geometry.coordinates.map(r => ringPath(r, width, height)).join(" ");
+  }
+  if (geometry.type === "MultiPolygon") {
+    return geometry.coordinates.flatMap(poly => poly.map(r => ringPath(r, width, height))).join(" ");
+  }
+  return "";
 }
 
 function showTooltip(evt, html) {
@@ -406,68 +456,46 @@ async function renderMap(containerId, indicatorKey) {
   if (legend) legend.innerHTML = legendHTML(mi, scale);
 
   try {
-    const topo = await ensureTopo();
-    const features = topojson.feature(topo, topo.objects.countries).features;
-    const byNum = {};
-    for (const c of S.countries) byNum[String(Number(c.iso_n))] = c;
-
+    const features = await ensureWorldFeatures();
+    const byIso = Object.fromEntries(S.countries.map(c => [c.iso3, c]));
     const width = 960, height = 480;
-    const projection = d3.geoNaturalEarth1().fitExtent([[8, 8], [width - 8, height - 8]], { type: "Sphere" });
-    const path = d3.geoPath(projection);
 
-    container.innerHTML = "";
-    const svg = d3.create("svg")
-      .attr("viewBox", `0 0 ${width} ${height}`)
-      .attr("role", "img")
-      .attr("aria-label", "World map colored by " + mi.label);
+    const countryPaths = features.map((f, idx) => {
+      const iso = f.properties && f.properties.iso3;
+      const c = iso ? byIso[iso] : null;
+      const v = c ? mapValueFor(c.iso3, mi) : null;
+      const fill = c && v != null ? scale.get(v) : "var(--nodata)";
+      const cls = "country-shape" + (c ? " has-data" : "");
+      const d = geometryPath(f.geometry, width, height);
+      if (!d) return "";
+      const attrs = c
+        ? `data-iso="${esc(c.iso3)}" tabindex="0" role="button" aria-label="${esc(c.name)}"`
+        : "";
+      return `<path d="${d}" class="${cls}" fill="${fill}" ${attrs}></path>`;
+    }).join("");
 
-    svg.append("path").attr("d", path({ type: "Sphere" })).attr("fill", "#EAF1F5").attr("stroke", "#C9D6DE");
-
-    svg.append("g").selectAll("path")
-      .data(features)
-      .join("path")
-      .attr("d", path)
-      .attr("class", d => "country-shape" + (byNum[String(Number(d.id))] ? " has-data" : ""))
-      .attr("fill", d => {
-        const c = byNum[String(Number(d.id))];
-        if (!c) return "var(--nodata)";
-        const v = mapValueFor(c.iso3, mi);
-        return v == null ? "var(--nodata)" : scale.get(v);
-      })
-      .attr("tabindex", d => byNum[String(Number(d.id))] ? 0 : null)
-      .on("mousemove", (evt, d) => {
-        const c = byNum[String(Number(d.id))];
-        if (!c) { hideTooltip(); return; }
-        tooltipFor(evt, c, mi);
-      })
-      .on("mouseleave", hideTooltip)
-      .on("click", (evt, d) => {
-        const c = byNum[String(Number(d.id))];
-        if (c) location.hash = "#/country/" + c.iso3;
-      })
-      .on("keydown", (evt, d) => {
-        const c = byNum[String(Number(d.id))];
-        if (c && (evt.key === "Enter" || evt.key === " ")) location.hash = "#/country/" + c.iso3;
-      });
-
-    // Marker circles for very small countries (e.g. Singapore)
-    for (const c of S.countries.filter(x => x.marker && x.marker_coords)) {
-      const [lon, lat] = c.marker_coords;
-      const pt = projection([lon, lat]);
+    const markers = S.countries.filter(x => x.marker && x.marker_coords).map(c => {
+      const [x, y] = projectLonLat(c.marker_coords, width, height);
       const v = mapValueFor(c.iso3, mi);
-      svg.append("circle")
-        .attr("cx", pt[0]).attr("cy", pt[1]).attr("r", 6)
-        .attr("fill", v == null ? "var(--nodata)" : scale.get(v))
-        .attr("stroke", "#17324A").attr("stroke-width", 1.2)
-        .attr("class", "country-shape has-data")
-        .attr("tabindex", 0)
-        .on("mousemove", evt => tooltipFor(evt, c, mi))
-        .on("mouseleave", hideTooltip)
-        .on("click", () => location.hash = "#/country/" + c.iso3)
-        .on("keydown", evt => { if (evt.key === "Enter" || evt.key === " ") location.hash = "#/country/" + c.iso3; });
-    }
+      const fill = v == null ? "var(--nodata)" : scale.get(v);
+      return `<circle cx="${x.toFixed(2)}" cy="${y.toFixed(2)}" r="6" fill="${fill}" stroke="#17324A" stroke-width="1.2" class="country-shape has-data" data-iso="${esc(c.iso3)}" tabindex="0" role="button" aria-label="${esc(c.name)}"></circle>`;
+    }).join("");
 
-    container.appendChild(svg.node());
+    container.innerHTML = `<svg viewBox="0 0 ${width} ${height}" role="img" aria-label="World map colored by ${esc(mi.label)}">
+      <rect x="0" y="0" width="${width}" height="${height}" fill="#EAF1F5" stroke="#C9D6DE"></rect>
+      <g>${countryPaths}${markers}</g>
+    </svg>`;
+
+    container.querySelectorAll("[data-iso]").forEach(node => {
+      const c = byIso[node.dataset.iso];
+      if (!c) return;
+      node.addEventListener("mousemove", evt => tooltipFor(evt, c, mi));
+      node.addEventListener("mouseleave", hideTooltip);
+      node.addEventListener("click", () => location.hash = "#/country/" + c.iso3);
+      node.addEventListener("keydown", evt => {
+        if (evt.key === "Enter" || evt.key === " ") location.hash = "#/country/" + c.iso3;
+      });
+    });
   } catch (e) {
     console.warn("Map unavailable, using grid fallback:", e.message);
     renderMapFallback(container, mi, scale);

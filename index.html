@@ -78,13 +78,11 @@
 
 <div id="tooltip" class="map-tooltip" role="status" aria-live="polite" hidden></div>
 
-<!-- Map libraries (CDN). If these fail to load (e.g. offline), the site falls back to a grid view. -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson-client/3.1.0/topojson.min.js"></script>
-
+<!-- The map uses a local GeoJSON outline file, so it does not depend on third-party map CDNs. -->
 <!-- Embedded copy of the /data JSON files so the site also works when opened
      directly from a local folder (file://), where browsers block fetch(). -->
 <script src="data/embedded_data.js"></script>
+<script src="data/world_map_embedded.js"></script>
 
 <script src="app.js"></script>
 </body>

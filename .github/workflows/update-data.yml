@@ -1,0 +1,65 @@
+# Monthly data refresh for the Country Development & Resilience Dashboard.
+#
+# What it does, once a month (and on demand from the Actions tab):
+#   1. Runs scripts/update_data.py, which fetches:
+#        - World Bank WDI indicators        (automated, keyless)
+#        - IMF WEO via the DataMapper API   (automated, keyless)
+#        - WGI governance percentile ranks  (automated, keyless)
+#        - UNDP HDR HDI/schooling CSV       (semi-automated, edition-pinned URL)
+#        - UN Comtrade trade structure      (optional; only if the repository
+#          secret COMTRADE_API_KEY is set)
+#   2. Rewrites the /data JSON files, data/update_status.json, and the
+#      embedded local-viewing backup (data/embedded_data.js).
+#   3. Commits ONLY if something actually changed.
+#
+# Failure behavior: each source is isolated inside the script. If a source
+# fails, its error is recorded in data/update_status.json (shown on the site's
+# "Data status" page) and the other sources still update. If the whole job
+# fails, nothing is committed and the website keeps serving its existing data.
+#
+# One-time requirement (see SETUP.md): the repository must allow workflows to
+# push commits — Settings → Actions → General → Workflow permissions →
+# "Read and write permissions".
+
+name: Update dashboard data
+
+on:
+  schedule:
+    - cron: "0 6 3 * *"    # 06:00 UTC on the 3rd of every month
+  workflow_dispatch: {}     # manual "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run data pipeline
+        env:
+          COMTRADE_API_KEY: ${{ secrets.COMTRADE_API_KEY }}
+        run: python3 scripts/update_data.py
+
+      - name: Commit and push changes (only if data changed)
+        run: |
+          git config user.name "data-update-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/ 
+          if git diff --cached --quiet; then
+            echo "No data changes — nothing to commit."
+          else
+            git commit -m "Automated data refresh ($(date -u +%Y-%m-%d))"
+            git push
+          fi

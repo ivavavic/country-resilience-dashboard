@@ -2,7 +2,7 @@
   "_comment": "Main indicator dataset. Every value carries: v = value, y = reference year, s = status, u = last-updated date (when set by the pipeline). Status codes: 'api_reported' = fetched automatically from the source API by scripts/update_data.py; 'reported' = verified by hand against the official source; 'manual_approx' = transcribed by hand from public sources, approximately correct but NOT verified; 'sample' = illustrative placeholder for demonstration only. Missing values are simply absent — never imputed. The monthly pipeline upgrades WDI, IMF, WGI and HDR values to 'api_reported'; see data/update_status.json for what is and is not automated.",
   "dataset_status": "manual_snapshot",
   "dataset_label": "Manual snapshot — pipeline not yet run; World Bank, IMF, WGI and HDR values upgrade to api_reported on the first automated update",
-  "last_updated": "2026-07-05",
+  "last_updated": "2026-08-03",
   "indicators": {
     "gni_pc": {
       "name": "GNI per capita (Atlas method)",
@@ -293,9 +293,10 @@
         "s": "manual_approx"
       },
       "hdi": {
-        "v": 0.805,
+        "v": 65.0,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "life_exp": {
         "v": 74.2,
@@ -303,9 +304,10 @@
         "s": "manual_approx"
       },
       "school_exp": {
-        "v": 14.4,
+        "v": 13.8,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "poverty": {
         "v": 7.5,
@@ -400,9 +402,10 @@
         "s": "sample"
       },
       "hdi": {
-        "v": 0.763,
+        "v": 86.0,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "life_exp": {
         "v": 71.9,
@@ -412,7 +415,8 @@
       "school_exp": {
         "v": 14.4,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "poverty": {
         "v": 13.0,
@@ -507,9 +511,10 @@
         "s": "manual_approx"
       },
       "hdi": {
-        "v": 0.929,
+        "v": 19.0,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "life_exp": {
         "v": 83.6,
@@ -517,9 +522,10 @@
         "s": "manual_approx"
       },
       "school_exp": {
-        "v": 16.5,
+        "v": 16.8,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "poverty": {
         "v": 0.5,
@@ -614,9 +620,10 @@
         "s": "manual_approx"
       },
       "hdi": {
-        "v": 0.788,
+        "v": 75.0,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "life_exp": {
         "v": 78.6,
@@ -624,9 +631,10 @@
         "s": "manual_approx"
       },
       "school_exp": {
-        "v": 15.2,
+        "v": 14.8,
         "y": 2022,
-        "s": "sample"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "poverty": {
         "v": 17.0,
@@ -721,9 +729,10 @@
         "s": "manual_approx"
       },
       "hdi": {
-        "v": 0.92,
+        "v": 24.0,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "life_exp": {
         "v": 84.5,
@@ -731,9 +740,10 @@
         "s": "manual_approx"
       },
       "school_exp": {
-        "v": 15.2,
+        "v": 15.5,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "poverty": {
         "v": 0.7,
@@ -741,9 +751,10 @@
         "s": "sample"
       },
       "gini": {
-        "v": 32.9,
-        "y": 2018,
-        "s": "manual_approx"
+        "v": 32.3,
+        "y": 2020,
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "unemployment": {
         "v": 2.6,
@@ -823,9 +834,10 @@
         "s": "manual_approx"
       },
       "hdi": {
-        "v": 0.95,
+        "v": 7.0,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "life_exp": {
         "v": 80.7,
@@ -833,9 +845,10 @@
         "s": "manual_approx"
       },
       "school_exp": {
-        "v": 17.0,
+        "v": 17.3,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "poverty": {
         "v": 0.2,
@@ -930,9 +943,10 @@
         "s": "manual_approx"
       },
       "hdi": {
-        "v": 0.927,
+        "v": 20.0,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "life_exp": {
         "v": 77.4,
@@ -940,9 +954,10 @@
         "s": "manual_approx"
       },
       "school_exp": {
-        "v": 16.3,
+        "v": 15.6,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "poverty": {
         "v": 1.2,
@@ -987,9 +1002,10 @@
         "s": "manual_approx"
       },
       "inflation": {
-        "v": 4.6,
-        "y": 2023,
-        "s": "manual_approx"
+        "v": 5.02,
+        "y": 2025,
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "population": {
         "v": 216.4,
@@ -1037,9 +1053,10 @@
         "s": "sample"
       },
       "hdi": {
-        "v": 0.76,
+        "v": 89.0,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "life_exp": {
         "v": 75.5,
@@ -1047,9 +1064,10 @@
         "s": "manual_approx"
       },
       "school_exp": {
-        "v": 15.6,
+        "v": 15.0,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "poverty": {
         "v": 23.5,
@@ -1149,9 +1167,10 @@
         "s": "manual_approx"
       },
       "hdi": {
-        "v": 0.548,
+        "v": 161.0,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "life_exp": {
         "v": 53.6,
@@ -1159,9 +1178,10 @@
         "s": "manual_approx"
       },
       "school_exp": {
-        "v": 10.5,
+        "v": 10.8,
         "y": 2022,
-        "s": "sample"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "poverty": {
         "v": 91.0,
@@ -1251,9 +1271,10 @@
         "s": "manual_approx"
       },
       "hdi": {
-        "v": 0.949,
+        "v": 9.0,
         "y": 2022,
-        "s": "manual_approx"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "life_exp": {
         "v": 83.0,
@@ -1261,9 +1282,10 @@
         "s": "manual_approx"
       },
       "school_exp": {
-        "v": 16.5,
+        "v": 16.8,
         "y": 2022,
-        "s": "sample"
+        "s": "api_reported",
+        "u": "2026-08-03"
       },
       "unemployment": {
         "v": 1.9,

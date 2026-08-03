@@ -2,7 +2,7 @@
    Copy of the JSON files in /data, wrapped as JavaScript so the dashboard
    also works when index.html is opened directly from a local folder (file://).
    Regenerate with: python3 scripts/update_data.py --embed-only
-   Generated: 2026-07-06 */
+   Generated: 2026-08-03 */
 window.EMBEDDED_DATA = {
  "countries": {
   "_comment": "Country metadata for the prototype. Income groups follow World Bank FY2025 classifications (approximate, verify before citing). iso_n is the ISO 3166-1 numeric code used to match countries on the world map.",
@@ -97,7 +97,7 @@ window.EMBEDDED_DATA = {
   "_comment": "Main indicator dataset. Every value carries: v = value, y = reference year, s = status, u = last-updated date (when set by the pipeline). Status codes: 'api_reported' = fetched automatically from the source API by scripts/update_data.py; 'reported' = verified by hand against the official source; 'manual_approx' = transcribed by hand from public sources, approximately correct but NOT verified; 'sample' = illustrative placeholder for demonstration only. Missing values are simply absent — never imputed. The monthly pipeline upgrades WDI, IMF, WGI and HDR values to 'api_reported'; see data/update_status.json for what is and is not automated.",
   "dataset_status": "manual_snapshot",
   "dataset_label": "Manual snapshot — pipeline not yet run; World Bank, IMF, WGI and HDR values upgrade to api_reported on the first automated update",
-  "last_updated": "2026-07-05",
+  "last_updated": "2026-08-03",
   "indicators": {
    "gni_pc": {
     "name": "GNI per capita (Atlas method)",
@@ -388,9 +388,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "hdi": {
-     "v": 0.805,
+     "v": 65.0,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "life_exp": {
      "v": 74.2,
@@ -398,9 +399,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "school_exp": {
-     "v": 14.4,
+     "v": 13.8,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "poverty": {
      "v": 7.5,
@@ -495,9 +497,10 @@ window.EMBEDDED_DATA = {
      "s": "sample"
     },
     "hdi": {
-     "v": 0.763,
+     "v": 86.0,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "life_exp": {
      "v": 71.9,
@@ -507,7 +510,8 @@ window.EMBEDDED_DATA = {
     "school_exp": {
      "v": 14.4,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "poverty": {
      "v": 13.0,
@@ -602,9 +606,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "hdi": {
-     "v": 0.929,
+     "v": 19.0,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "life_exp": {
      "v": 83.6,
@@ -612,9 +617,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "school_exp": {
-     "v": 16.5,
+     "v": 16.8,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "poverty": {
      "v": 0.5,
@@ -709,9 +715,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "hdi": {
-     "v": 0.788,
+     "v": 75.0,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "life_exp": {
      "v": 78.6,
@@ -719,9 +726,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "school_exp": {
-     "v": 15.2,
+     "v": 14.8,
      "y": 2022,
-     "s": "sample"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "poverty": {
      "v": 17.0,
@@ -816,9 +824,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "hdi": {
-     "v": 0.92,
+     "v": 24.0,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "life_exp": {
      "v": 84.5,
@@ -826,9 +835,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "school_exp": {
-     "v": 15.2,
+     "v": 15.5,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "poverty": {
      "v": 0.7,
@@ -836,9 +846,10 @@ window.EMBEDDED_DATA = {
      "s": "sample"
     },
     "gini": {
-     "v": 32.9,
-     "y": 2018,
-     "s": "manual_approx"
+     "v": 32.3,
+     "y": 2020,
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "unemployment": {
      "v": 2.6,
@@ -918,9 +929,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "hdi": {
-     "v": 0.95,
+     "v": 7.0,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "life_exp": {
      "v": 80.7,
@@ -928,9 +940,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "school_exp": {
-     "v": 17.0,
+     "v": 17.3,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "poverty": {
      "v": 0.2,
@@ -1025,9 +1038,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "hdi": {
-     "v": 0.927,
+     "v": 20.0,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "life_exp": {
      "v": 77.4,
@@ -1035,9 +1049,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "school_exp": {
-     "v": 16.3,
+     "v": 15.6,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "poverty": {
      "v": 1.2,
@@ -1082,9 +1097,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "inflation": {
-     "v": 4.6,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 5.02,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "population": {
      "v": 216.4,
@@ -1132,9 +1148,10 @@ window.EMBEDDED_DATA = {
      "s": "sample"
     },
     "hdi": {
-     "v": 0.76,
+     "v": 89.0,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "life_exp": {
      "v": 75.5,
@@ -1142,9 +1159,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "school_exp": {
-     "v": 15.6,
+     "v": 15.0,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "poverty": {
      "v": 23.5,
@@ -1244,9 +1262,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "hdi": {
-     "v": 0.548,
+     "v": 161.0,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "life_exp": {
      "v": 53.6,
@@ -1254,9 +1273,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "school_exp": {
-     "v": 10.5,
+     "v": 10.8,
      "y": 2022,
-     "s": "sample"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "poverty": {
      "v": 91.0,
@@ -1346,9 +1366,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "hdi": {
-     "v": 0.949,
+     "v": 9.0,
      "y": 2022,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "life_exp": {
      "v": 83.0,
@@ -1356,9 +1377,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "school_exp": {
-     "v": 16.5,
+     "v": 16.8,
      "y": 2022,
-     "s": "sample"
+     "s": "api_reported",
+     "u": "2026-08-03"
     },
     "unemployment": {
      "v": 1.9,
@@ -2051,7 +2073,7 @@ window.EMBEDDED_DATA = {
  },
  "update_status": {
   "_comment": "Machine-written by scripts/update_data.py after each pipeline run, and rendered on the website's Data status page. 'last_success': null means the pipeline has not yet run successfully for that source since this file was created.",
-  "pipeline_last_run": null,
+  "pipeline_last_run": "2026-08-03",
   "pipeline_note": "The pipeline runs monthly via GitHub Actions (or manually: python3 scripts/update_data.py). Until its first run, values carry their shipped manual/sample labels.",
   "sources": {
    "wb_wdi": {
@@ -2073,10 +2095,10 @@ window.EMBEDDED_DATA = {
     ],
     "indicators_manual": [],
     "also_updates": "Income group classification per country.",
-    "last_attempt": null,
-    "last_success": null,
-    "latest_ref_year": null,
-    "error": null
+    "last_attempt": "2026-08-03",
+    "last_success": "2026-08-03",
+    "latest_ref_year": 2025,
+    "error": "Partial: 108 request(s) failed, e.g. SRB/NY.GNP.PCAP.CD: The read operation timed out"
    },
    "imf": {
     "name": "IMF — World Economic Outlook (DataMapper API)",
@@ -2095,10 +2117,10 @@ window.EMBEDDED_DATA = {
      "reserves_months": "No keyless IMF endpoint serves 'reserves in months of imports' as one ready series; it requires IRFCL/BOP SDMX mapping plus an imports denominator. Remains manual.",
      "interest_rev": "Interest payments as % of revenue is not a standard WEO DataMapper series; it appears in Fiscal Monitor tables without a stable machine-readable endpoint. Remains manual."
     },
-    "last_attempt": null,
+    "last_attempt": "2026-08-03",
     "last_success": null,
     "latest_ref_year": null,
-    "error": null
+    "error": "GGXWDG_NGDP: HTTP Error 403: Forbidden; GGXCNL_NGDP: HTTP Error 403: Forbidden; BCA_NGDPD: HTTP Error 403: Forbidden"
    },
    "wb_wgi": {
     "name": "Worldwide Governance Indicators (via World Bank API)",
@@ -2109,10 +2131,10 @@ window.EMBEDDED_DATA = {
      "rule_law"
     ],
     "indicators_manual": [],
-    "last_attempt": null,
+    "last_attempt": "2026-08-03",
     "last_success": null,
     "latest_ref_year": null,
-    "error": null
+    "error": "SRB/GE.PER.RNK: HTTP Error 502: Bad Gateway"
    },
    "undp_hdr": {
     "name": "UNDP — Human Development Report",
@@ -2123,9 +2145,9 @@ window.EMBEDDED_DATA = {
      "school_exp"
     ],
     "indicators_manual": [],
-    "last_attempt": null,
-    "last_success": null,
-    "latest_ref_year": null,
+    "last_attempt": "2026-08-03",
+    "last_success": "2026-08-03",
+    "latest_ref_year": 2022,
     "error": null
    },
    "oec": {
@@ -2154,10 +2176,10 @@ window.EMBEDDED_DATA = {
      "top_products",
      "top_destinations"
     ],
-    "last_attempt": null,
+    "last_attempt": "2026-08-03",
     "last_success": null,
     "latest_ref_year": null,
-    "error": null
+    "error": "Skipped: no COMTRADE_API_KEY provided. This source is optional; get a free key at comtradeplus.un.org and add it as a repository secret to enable it."
    }
   }
  }

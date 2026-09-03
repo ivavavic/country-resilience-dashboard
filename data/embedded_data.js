@@ -2,7 +2,7 @@
    Copy of the JSON files in /data, wrapped as JavaScript so the dashboard
    also works when index.html is opened directly from a local folder (file://).
    Regenerate with: python3 scripts/update_data.py --embed-only
-   Generated: 2026-08-03 */
+   Generated: 2026-09-03 */
 window.EMBEDDED_DATA = {
  "countries": {
   "_comment": "Country metadata for the prototype. Income groups follow World Bank FY2025 classifications (approximate, verify before citing). iso_n is the ISO 3166-1 numeric code used to match countries on the world map.",
@@ -95,9 +95,9 @@ window.EMBEDDED_DATA = {
  },
  "indicator_values": {
   "_comment": "Main indicator dataset. Every value carries: v = value, y = reference year, s = status, u = last-updated date (when set by the pipeline). Status codes: 'api_reported' = fetched automatically from the source API by scripts/update_data.py; 'reported' = verified by hand against the official source; 'manual_approx' = transcribed by hand from public sources, approximately correct but NOT verified; 'sample' = illustrative placeholder for demonstration only. Missing values are simply absent — never imputed. The monthly pipeline upgrades WDI, IMF, WGI and HDR values to 'api_reported'; see data/update_status.json for what is and is not automated.",
-  "dataset_status": "manual_snapshot",
-  "dataset_label": "Manual snapshot — pipeline not yet run; World Bank, IMF, WGI and HDR values upgrade to api_reported on the first automated update",
-  "last_updated": "2026-08-03",
+  "dataset_status": "mixed",
+  "dataset_label": "Mixed dataset — 127 of 207 values fetched/verified from source APIs; remainder manual or sample (labeled per value)",
+  "last_updated": "2026-09-03",
   "indicators": {
    "gni_pc": {
     "name": "GNI per capita (Atlas method)",
@@ -323,34 +323,40 @@ window.EMBEDDED_DATA = {
   "values": {
    "SRB": {
     "gni_pc": {
-     "v": 10140,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 13480.0,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_pc": {
-     "v": 11360,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 15262.05,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_growth": {
-     "v": 2.5,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 2.03,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "inflation": {
-     "v": 12.4,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 3.89,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "population": {
-     "v": 6.62,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 6.55,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "pop_growth": {
-     "v": -0.7,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": -0.57,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "debt_gdp": {
      "v": 52.3,
@@ -373,9 +379,10 @@ window.EMBEDDED_DATA = {
      "s": "sample"
     },
     "remittances_gdp": {
-     "v": 5.9,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 6.56,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "export_conc": {
      "v": 0.08,
@@ -394,9 +401,10 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "life_exp": {
-     "v": 74.2,
-     "y": 2022,
-     "s": "manual_approx"
+     "v": 75.97,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "school_exp": {
      "v": 13.8,
@@ -405,19 +413,22 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "poverty": {
-     "v": 7.5,
-     "y": 2021,
-     "s": "manual_approx"
+     "v": 9.0,
+     "y": 2023,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gini": {
-     "v": 33.1,
-     "y": 2021,
-     "s": "manual_approx"
+     "v": 32.8,
+     "y": 2023,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "unemployment": {
-     "v": 9.4,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 7.12,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gov_eff": {
      "v": 52,
@@ -432,34 +443,40 @@ window.EMBEDDED_DATA = {
    },
    "MDA": {
     "gni_pc": {
-     "v": 6110,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 8050.0,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_pc": {
-     "v": 6650,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 8621.72,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_growth": {
-     "v": 0.7,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 2.42,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "inflation": {
-     "v": 13.4,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 7.76,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "population": {
-     "v": 2.49,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 2.36,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "pop_growth": {
-     "v": -1.1,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": -1.75,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "debt_gdp": {
      "v": 35.2,
@@ -482,9 +499,10 @@ window.EMBEDDED_DATA = {
      "s": "sample"
     },
     "remittances_gdp": {
-     "v": 11.5,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 9.41,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "export_conc": {
      "v": 0.12,
@@ -503,9 +521,10 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "life_exp": {
-     "v": 71.9,
-     "y": 2022,
-     "s": "manual_approx"
+     "v": 71.33,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "school_exp": {
      "v": 14.4,
@@ -514,19 +533,22 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "poverty": {
-     "v": 13.0,
-     "y": 2021,
-     "s": "manual_approx"
+     "v": 20.4,
+     "y": 2023,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gini": {
-     "v": 25.7,
-     "y": 2022,
-     "s": "manual_approx"
+     "v": 26.8,
+     "y": 2023,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "unemployment": {
-     "v": 4.6,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 1.5,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gov_eff": {
      "v": 38,
@@ -541,34 +563,40 @@ window.EMBEDDED_DATA = {
    },
    "KOR": {
     "gni_pc": {
-     "v": 35490,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 37880.0,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_pc": {
-     "v": 33120,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 36226.97,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_growth": {
-     "v": 1.4,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 1.01,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "inflation": {
-     "v": 3.6,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 2.12,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "population": {
-     "v": 51.7,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 51.68,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "pop_growth": {
-     "v": -0.1,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": -0.13,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "debt_gdp": {
      "v": 55.2,
@@ -591,9 +619,10 @@ window.EMBEDDED_DATA = {
      "s": "sample"
     },
     "remittances_gdp": {
-     "v": 0.4,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 0.38,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "export_conc": {
      "v": 0.14,
@@ -612,9 +641,10 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "life_exp": {
-     "v": 83.6,
-     "y": 2022,
-     "s": "manual_approx"
+     "v": 83.63,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "school_exp": {
      "v": 16.8,
@@ -625,17 +655,20 @@ window.EMBEDDED_DATA = {
     "poverty": {
      "v": 0.5,
      "y": 2021,
-     "s": "sample"
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gini": {
-     "v": 31.4,
+     "v": 32.9,
      "y": 2021,
-     "s": "manual_approx"
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "unemployment": {
-     "v": 2.7,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 2.68,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gov_eff": {
      "v": 87,
@@ -650,34 +683,40 @@ window.EMBEDDED_DATA = {
    },
    "CHN": {
     "gni_pc": {
-     "v": 13400,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 14230.0,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_pc": {
-     "v": 12610,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 13861.97,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_growth": {
-     "v": 5.2,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 4.96,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "inflation": {
-     "v": 0.2,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 0.06,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "population": {
-     "v": 1410.7,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 1406.59,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "pop_growth": {
-     "v": -0.1,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": -0.17,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "debt_gdp": {
      "v": 83.6,
@@ -700,9 +739,10 @@ window.EMBEDDED_DATA = {
      "s": "sample"
     },
     "remittances_gdp": {
-     "v": 0.2,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 0.15,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "export_conc": {
      "v": 0.08,
@@ -721,9 +761,10 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "life_exp": {
-     "v": 78.6,
-     "y": 2022,
-     "s": "manual_approx"
+     "v": 78.02,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "school_exp": {
      "v": 14.8,
@@ -732,19 +773,22 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "poverty": {
-     "v": 17.0,
-     "y": 2021,
-     "s": "sample"
+     "v": 21.3,
+     "y": 2022,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gini": {
-     "v": 35.7,
-     "y": 2021,
-     "s": "manual_approx"
+     "v": 36.0,
+     "y": 2022,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "unemployment": {
-     "v": 5.2,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 4.62,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gov_eff": {
      "v": 74,
@@ -759,34 +803,40 @@ window.EMBEDDED_DATA = {
    },
    "JPN": {
     "gni_pc": {
-     "v": 39030,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 38340.0,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_pc": {
-     "v": 33830,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 35951.04,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_growth": {
-     "v": 1.9,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 1.19,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "inflation": {
-     "v": 3.3,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 3.17,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "population": {
-     "v": 124.5,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 123.37,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "pop_growth": {
-     "v": -0.5,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": -0.49,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "debt_gdp": {
      "v": 252.4,
@@ -809,9 +859,10 @@ window.EMBEDDED_DATA = {
      "s": "sample"
     },
     "remittances_gdp": {
-     "v": 0.1,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 0.11,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "export_conc": {
      "v": 0.1,
@@ -830,9 +881,10 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "life_exp": {
-     "v": 84.5,
-     "y": 2022,
-     "s": "manual_approx"
+     "v": 84.04,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "school_exp": {
      "v": 15.5,
@@ -841,9 +893,10 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "poverty": {
-     "v": 0.7,
-     "y": 2018,
-     "s": "sample"
+     "v": 3.3,
+     "y": 2020,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gini": {
      "v": 32.3,
@@ -852,9 +905,10 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "unemployment": {
-     "v": 2.6,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 2.45,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gov_eff": {
      "v": 92,
@@ -869,34 +923,40 @@ window.EMBEDDED_DATA = {
    },
    "DEU": {
     "gni_pc": {
-     "v": 53970,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 60200.0,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_pc": {
-     "v": 52750,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 60496.44,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_growth": {
-     "v": -0.3,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 0.24,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "inflation": {
-     "v": 5.9,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 2.17,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "population": {
-     "v": 84.5,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 83.49,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "pop_growth": {
-     "v": 0.3,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": -0.03,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "debt_gdp": {
      "v": 62.9,
@@ -914,9 +974,10 @@ window.EMBEDDED_DATA = {
      "s": "manual_approx"
     },
     "remittances_gdp": {
-     "v": 0.5,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 0.47,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "export_conc": {
      "v": 0.09,
@@ -935,9 +996,10 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "life_exp": {
-     "v": 80.7,
-     "y": 2022,
-     "s": "manual_approx"
+     "v": 80.79,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "school_exp": {
      "v": 17.3,
@@ -946,19 +1008,22 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "poverty": {
-     "v": 0.2,
-     "y": 2020,
-     "s": "sample"
+     "v": 1.6,
+     "y": 2022,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gini": {
-     "v": 31.7,
-     "y": 2020,
-     "s": "manual_approx"
+     "v": 33.7,
+     "y": 2022,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "unemployment": {
-     "v": 3.0,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 3.71,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gov_eff": {
      "v": 89,
@@ -973,34 +1038,40 @@ window.EMBEDDED_DATA = {
    },
    "USA": {
     "gni_pc": {
-     "v": 80300,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 88810.0,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_pc": {
-     "v": 81700,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 90026.52,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_growth": {
-     "v": 2.9,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 2.16,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "inflation": {
-     "v": 4.1,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 2.95,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "population": {
-     "v": 334.9,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 341.78,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "pop_growth": {
-     "v": 0.5,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 0.52,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "debt_gdp": {
      "v": 122.1,
@@ -1024,8 +1095,9 @@ window.EMBEDDED_DATA = {
     },
     "remittances_gdp": {
      "v": 0.03,
-     "y": 2023,
-     "s": "manual_approx"
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "export_conc": {
      "v": 0.07,
@@ -1044,9 +1116,10 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "life_exp": {
-     "v": 77.4,
-     "y": 2022,
-     "s": "manual_approx"
+     "v": 78.89,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "school_exp": {
      "v": 15.6,
@@ -1055,19 +1128,22 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "poverty": {
-     "v": 1.2,
-     "y": 2021,
-     "s": "sample"
+     "v": 1.8,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gini": {
-     "v": 41.3,
-     "y": 2021,
-     "s": "manual_approx"
+     "v": 41.8,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "unemployment": {
-     "v": 3.6,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 4.2,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gov_eff": {
      "v": 85,
@@ -1082,19 +1158,22 @@ window.EMBEDDED_DATA = {
    },
    "BRA": {
     "gni_pc": {
-     "v": 8720,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 10550.0,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_pc": {
-     "v": 10040,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 10713.29,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_growth": {
-     "v": 2.9,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 2.29,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "inflation": {
      "v": 5.02,
@@ -1103,14 +1182,16 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "population": {
-     "v": 216.4,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 212.81,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "pop_growth": {
-     "v": 0.5,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 0.38,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "debt_gdp": {
      "v": 84.7,
@@ -1133,9 +1214,10 @@ window.EMBEDDED_DATA = {
      "s": "sample"
     },
     "remittances_gdp": {
-     "v": 0.3,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 0.21,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "export_conc": {
      "v": 0.15,
@@ -1154,9 +1236,10 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "life_exp": {
-     "v": 75.5,
-     "y": 2022,
-     "s": "manual_approx"
+     "v": 76.02,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "school_exp": {
      "v": 15.0,
@@ -1165,19 +1248,22 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "poverty": {
-     "v": 23.5,
-     "y": 2022,
-     "s": "manual_approx"
+     "v": 20.6,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gini": {
-     "v": 52.0,
-     "y": 2022,
-     "s": "manual_approx"
+     "v": 50.3,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "unemployment": {
-     "v": 8.0,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 5.97,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gov_eff": {
      "v": 45,
@@ -1192,34 +1278,40 @@ window.EMBEDDED_DATA = {
    },
    "NGA": {
     "gni_pc": {
-     "v": 1930,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 1360.0,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_pc": {
-     "v": 1620,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 1224.25,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_growth": {
-     "v": 2.9,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 4.01,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "inflation": {
-     "v": 24.7,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 23.01,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "population": {
-     "v": 223.8,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 237.53,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "pop_growth": {
-     "v": 2.4,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 2.06,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "debt_gdp": {
      "v": 46.3,
@@ -1247,9 +1339,10 @@ window.EMBEDDED_DATA = {
      "s": "sample"
     },
     "remittances_gdp": {
-     "v": 5.4,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 7.84,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "export_conc": {
      "v": 0.52,
@@ -1268,9 +1361,10 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "life_exp": {
-     "v": 53.6,
-     "y": 2022,
-     "s": "manual_approx"
+     "v": 54.63,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "school_exp": {
      "v": 10.8,
@@ -1279,19 +1373,22 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "poverty": {
-     "v": 91.0,
-     "y": 2018,
-     "s": "manual_approx"
+     "v": 92.9,
+     "y": 2022,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gini": {
-     "v": 35.1,
-     "y": 2018,
-     "s": "manual_approx"
+     "v": 33.9,
+     "y": 2022,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "unemployment": {
-     "v": 4.1,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 3.06,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gov_eff": {
      "v": 14,
@@ -1306,34 +1403,40 @@ window.EMBEDDED_DATA = {
    },
    "SGP": {
     "gni_pc": {
-     "v": 67200,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 81760.0,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_pc": {
-     "v": 84730,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 98813.98,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gdp_growth": {
-     "v": 1.1,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 5.03,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "inflation": {
-     "v": 4.8,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 0.9,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "population": {
-     "v": 5.92,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 6.11,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "pop_growth": {
-     "v": 0.7,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 1.22,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "debt_gdp": {
      "v": 168.0,
@@ -1372,9 +1475,10 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "life_exp": {
-     "v": 83.0,
-     "y": 2022,
-     "s": "manual_approx"
+     "v": 83.35,
+     "y": 2024,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "school_exp": {
      "v": 16.8,
@@ -1383,9 +1487,10 @@ window.EMBEDDED_DATA = {
      "u": "2026-08-03"
     },
     "unemployment": {
-     "v": 1.9,
-     "y": 2023,
-     "s": "manual_approx"
+     "v": 2.82,
+     "y": 2025,
+     "s": "api_reported",
+     "u": "2026-09-03"
     },
     "gov_eff": {
      "v": 100,
@@ -2073,7 +2178,7 @@ window.EMBEDDED_DATA = {
  },
  "update_status": {
   "_comment": "Machine-written by scripts/update_data.py after each pipeline run, and rendered on the website's Data status page. 'last_success': null means the pipeline has not yet run successfully for that source since this file was created.",
-  "pipeline_last_run": "2026-08-03",
+  "pipeline_last_run": "2026-09-03",
   "pipeline_note": "The pipeline runs monthly via GitHub Actions (or manually: python3 scripts/update_data.py). Until its first run, values carry their shipped manual/sample labels.",
   "sources": {
    "wb_wdi": {
@@ -2095,10 +2200,10 @@ window.EMBEDDED_DATA = {
     ],
     "indicators_manual": [],
     "also_updates": "Income group classification per country.",
-    "last_attempt": "2026-08-03",
-    "last_success": "2026-08-03",
+    "last_attempt": "2026-09-03",
+    "last_success": "2026-09-03",
     "latest_ref_year": 2025,
-    "error": "Partial: 108 request(s) failed, e.g. SRB/NY.GNP.PCAP.CD: The read operation timed out"
+    "error": null
    },
    "imf": {
     "name": "IMF — World Economic Outlook (DataMapper API)",
@@ -2117,7 +2222,7 @@ window.EMBEDDED_DATA = {
      "reserves_months": "No keyless IMF endpoint serves 'reserves in months of imports' as one ready series; it requires IRFCL/BOP SDMX mapping plus an imports denominator. Remains manual.",
      "interest_rev": "Interest payments as % of revenue is not a standard WEO DataMapper series; it appears in Fiscal Monitor tables without a stable machine-readable endpoint. Remains manual."
     },
-    "last_attempt": "2026-08-03",
+    "last_attempt": "2026-09-03",
     "last_success": null,
     "latest_ref_year": null,
     "error": "GGXWDG_NGDP: HTTP Error 403: Forbidden; GGXCNL_NGDP: HTTP Error 403: Forbidden; BCA_NGDPD: HTTP Error 403: Forbidden"
@@ -2131,10 +2236,10 @@ window.EMBEDDED_DATA = {
      "rule_law"
     ],
     "indicators_manual": [],
-    "last_attempt": "2026-08-03",
+    "last_attempt": "2026-09-03",
     "last_success": null,
     "latest_ref_year": null,
-    "error": "SRB/GE.PER.RNK: HTTP Error 502: Bad Gateway"
+    "error": "No data returned by the API."
    },
    "undp_hdr": {
     "name": "UNDP — Human Development Report",
@@ -2145,8 +2250,8 @@ window.EMBEDDED_DATA = {
      "school_exp"
     ],
     "indicators_manual": [],
-    "last_attempt": "2026-08-03",
-    "last_success": "2026-08-03",
+    "last_attempt": "2026-09-03",
+    "last_success": "2026-09-03",
     "latest_ref_year": 2022,
     "error": null
    },
@@ -2176,7 +2281,7 @@ window.EMBEDDED_DATA = {
      "top_products",
      "top_destinations"
     ],
-    "last_attempt": "2026-08-03",
+    "last_attempt": "2026-09-03",
     "last_success": null,
     "latest_ref_year": null,
     "error": "Skipped: no COMTRADE_API_KEY provided. This source is optional; get a free key at comtradeplus.un.org and add it as a repository secret to enable it."

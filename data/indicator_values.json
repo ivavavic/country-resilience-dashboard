@@ -2,7 +2,7 @@
   "_comment": "Main indicator dataset. Every value carries: v = value, y = reference year, s = status, u = last-updated date (when set by the pipeline). Status codes: 'api_reported' = fetched automatically from the source API by scripts/update_data.py; 'reported' = verified by hand against the official source; 'manual_approx' = transcribed by hand from public sources, approximately correct but NOT verified; 'sample' = illustrative placeholder for demonstration only. Missing values are simply absent — never imputed. The monthly pipeline upgrades WDI, IMF, WGI and HDR values to 'api_reported'; see data/update_status.json for what is and is not automated.",
   "dataset_status": "mixed",
   "dataset_label": "Mixed dataset — 127 of 207 values fetched/verified from source APIs; remainder manual or sample (labeled per value)",
-  "last_updated": "2026-09-03",
+  "last_updated": "2026-10-03",
   "indicators": {
     "gni_pc": {
       "name": "GNI per capita (Atlas method)",

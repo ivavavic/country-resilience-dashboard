@@ -2,7 +2,7 @@
    Copy of the JSON files in /data, wrapped as JavaScript so the dashboard
    also works when index.html is opened directly from a local folder (file://).
    Regenerate with: python3 scripts/update_data.py --embed-only
-   Generated: 2026-09-03 */
+   Generated: 2026-10-03 */
 window.EMBEDDED_DATA = {
  "countries": {
   "_comment": "Country metadata for the prototype. Income groups follow World Bank FY2025 classifications (approximate, verify before citing). iso_n is the ISO 3166-1 numeric code used to match countries on the world map.",
@@ -97,7 +97,7 @@ window.EMBEDDED_DATA = {
   "_comment": "Main indicator dataset. Every value carries: v = value, y = reference year, s = status, u = last-updated date (when set by the pipeline). Status codes: 'api_reported' = fetched automatically from the source API by scripts/update_data.py; 'reported' = verified by hand against the official source; 'manual_approx' = transcribed by hand from public sources, approximately correct but NOT verified; 'sample' = illustrative placeholder for demonstration only. Missing values are simply absent — never imputed. The monthly pipeline upgrades WDI, IMF, WGI and HDR values to 'api_reported'; see data/update_status.json for what is and is not automated.",
   "dataset_status": "mixed",
   "dataset_label": "Mixed dataset — 127 of 207 values fetched/verified from source APIs; remainder manual or sample (labeled per value)",
-  "last_updated": "2026-09-03",
+  "last_updated": "2026-10-03",
   "indicators": {
    "gni_pc": {
     "name": "GNI per capita (Atlas method)",
@@ -2178,7 +2178,7 @@ window.EMBEDDED_DATA = {
  },
  "update_status": {
   "_comment": "Machine-written by scripts/update_data.py after each pipeline run, and rendered on the website's Data status page. 'last_success': null means the pipeline has not yet run successfully for that source since this file was created.",
-  "pipeline_last_run": "2026-09-03",
+  "pipeline_last_run": "2026-10-03",
   "pipeline_note": "The pipeline runs monthly via GitHub Actions (or manually: python3 scripts/update_data.py). Until its first run, values carry their shipped manual/sample labels.",
   "sources": {
    "wb_wdi": {
@@ -2200,8 +2200,8 @@ window.EMBEDDED_DATA = {
     ],
     "indicators_manual": [],
     "also_updates": "Income group classification per country.",
-    "last_attempt": "2026-09-03",
-    "last_success": "2026-09-03",
+    "last_attempt": "2026-10-03",
+    "last_success": "2026-10-03",
     "latest_ref_year": 2025,
     "error": null
    },
@@ -2222,7 +2222,7 @@ window.EMBEDDED_DATA = {
      "reserves_months": "No keyless IMF endpoint serves 'reserves in months of imports' as one ready series; it requires IRFCL/BOP SDMX mapping plus an imports denominator. Remains manual.",
      "interest_rev": "Interest payments as % of revenue is not a standard WEO DataMapper series; it appears in Fiscal Monitor tables without a stable machine-readable endpoint. Remains manual."
     },
-    "last_attempt": "2026-09-03",
+    "last_attempt": "2026-10-03",
     "last_success": null,
     "latest_ref_year": null,
     "error": "GGXWDG_NGDP: HTTP Error 403: Forbidden; GGXCNL_NGDP: HTTP Error 403: Forbidden; BCA_NGDPD: HTTP Error 403: Forbidden"
@@ -2236,7 +2236,7 @@ window.EMBEDDED_DATA = {
      "rule_law"
     ],
     "indicators_manual": [],
-    "last_attempt": "2026-09-03",
+    "last_attempt": "2026-10-03",
     "last_success": null,
     "latest_ref_year": null,
     "error": "No data returned by the API."
@@ -2250,8 +2250,8 @@ window.EMBEDDED_DATA = {
      "school_exp"
     ],
     "indicators_manual": [],
-    "last_attempt": "2026-09-03",
-    "last_success": "2026-09-03",
+    "last_attempt": "2026-10-03",
+    "last_success": "2026-10-03",
     "latest_ref_year": 2022,
     "error": null
    },
@@ -2281,7 +2281,7 @@ window.EMBEDDED_DATA = {
      "top_products",
      "top_destinations"
     ],
-    "last_attempt": "2026-09-03",
+    "last_attempt": "2026-10-03",
     "last_success": null,
     "latest_ref_year": null,
     "error": "Skipped: no COMTRADE_API_KEY provided. This source is optional; get a free key at comtradeplus.un.org and add it as a repository secret to enable it."

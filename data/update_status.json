@@ -1,6 +1,6 @@
 {
   "_comment": "Machine-written by scripts/update_data.py after each pipeline run, and rendered on the website's Data status page. 'last_success': null means the pipeline has not yet run successfully for that source since this file was created.",
-  "pipeline_last_run": "2026-09-03",
+  "pipeline_last_run": "2026-10-03",
   "pipeline_note": "The pipeline runs monthly via GitHub Actions (or manually: python3 scripts/update_data.py). Until its first run, values carry their shipped manual/sample labels.",
   "sources": {
     "wb_wdi": {
@@ -22,8 +22,8 @@
       ],
       "indicators_manual": [],
       "also_updates": "Income group classification per country.",
-      "last_attempt": "2026-09-03",
-      "last_success": "2026-09-03",
+      "last_attempt": "2026-10-03",
+      "last_success": "2026-10-03",
       "latest_ref_year": 2025,
       "error": null
     },
@@ -44,7 +44,7 @@
         "reserves_months": "No keyless IMF endpoint serves 'reserves in months of imports' as one ready series; it requires IRFCL/BOP SDMX mapping plus an imports denominator. Remains manual.",
         "interest_rev": "Interest payments as % of revenue is not a standard WEO DataMapper series; it appears in Fiscal Monitor tables without a stable machine-readable endpoint. Remains manual."
       },
-      "last_attempt": "2026-09-03",
+      "last_attempt": "2026-10-03",
       "last_success": null,
       "latest_ref_year": null,
       "error": "GGXWDG_NGDP: HTTP Error 403: Forbidden; GGXCNL_NGDP: HTTP Error 403: Forbidden; BCA_NGDPD: HTTP Error 403: Forbidden"
@@ -58,7 +58,7 @@
         "rule_law"
       ],
       "indicators_manual": [],
-      "last_attempt": "2026-09-03",
+      "last_attempt": "2026-10-03",
       "last_success": null,
       "latest_ref_year": null,
       "error": "No data returned by the API."
@@ -72,8 +72,8 @@
         "school_exp"
       ],
       "indicators_manual": [],
-      "last_attempt": "2026-09-03",
-      "last_success": "2026-09-03",
+      "last_attempt": "2026-10-03",
+      "last_success": "2026-10-03",
       "latest_ref_year": 2022,
       "error": null
     },
@@ -103,7 +103,7 @@
         "top_products",
         "top_destinations"
       ],
-      "last_attempt": "2026-09-03",
+      "last_attempt": "2026-10-03",
       "last_success": null,
       "latest_ref_year": null,
       "error": "Skipped: no COMTRADE_API_KEY provided. This source is optional; get a free key at comtradeplus.un.org and add it as a repository secret to enable it."
